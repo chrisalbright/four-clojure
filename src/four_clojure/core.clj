@@ -14,3 +14,10 @@
     (concat (drop $ xs) (take $ xs))))
 
 (defn problem-46 [fn] #(fn %2 %1))
+
+(defn problem-49 [n xs] [(take n xs) (drop n xs)])
+
+(defn problem-50 [xs] 
+  (->> xs 
+      (group-by type)
+      (vals)))

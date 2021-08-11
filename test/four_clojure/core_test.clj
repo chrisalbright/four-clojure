@@ -20,4 +20,16 @@
     (is (= 3 ((problem-46 nth) 2 [1 2 3 4 5])))
     (is (= true ((problem-46 >) 7 8)))
     (is (= 4 ((problem-46 quot) 2 8)))
-    (is (= [1 2 3] ((problem-46 take) [1 2 3 4 5] 3)))))
+    (is (= [1 2 3] ((problem-46 take) [1 2 3 4 5] 3))))
+  
+  (testing "Problem 49"
+    (is (= (problem-49 3 [1 2 3 4 5 6]) [[1 2 3] [4 5 6]]))
+    (is (= (problem-49 1 [:a :b :c :d]) [[:a] [:b :c :d]]))
+    (is (= (problem-49 2 [[1 2] [3 4] [5 6]]) [[[1 2] [3 4]] [[5 6]]])))
+  
+  (testing "Problem 50"
+    (is (= (set (problem-50 [1 :a 2 :b 3 :c])) #{[1 2 3] [:a :b :c]}))
+    (is (= (set (problem-50 [:a "foo"  "bar" :b])) #{[:a :b] ["foo" "bar"]}))
+    (is (= (set (problem-50 [[1 2] :a [3 4] 5 6 :b])) #{[[1 2] [3 4]] [:a :b] [5 6]})))
+)
+
