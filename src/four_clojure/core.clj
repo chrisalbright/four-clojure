@@ -12,3 +12,5 @@
     (count $)
     (mod x $)
     (concat (drop $ xs) (take $ xs))))
+
+(defn problem-46 [fn] #(fn %2 %1))
