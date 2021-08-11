@@ -5,3 +5,9 @@
   (if (< (count xs) n) ys
       (let [seqs (or (seq ys) (repeat n []))]
         (recur (drop n xs) n (map conj seqs xs)))))
+
+(defn problem-44 [x xs]
+  (as-> xs $
+    (count $)
+    (mod x $)
+    (concat (drop $ xs) (take $ xs))))
