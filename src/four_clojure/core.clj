@@ -24,8 +24,11 @@
 
 (defn problem-53 [xs] [])
 
-(defn problem-55 [x xs]
+(defn problem-54 [x xs]
   (loop [ys [] zs xs]
     (if (< (count zs) x)
       ys
       (recur (conj ys (take x zs)) (drop x zs)))))
+
+(defn problem-55 [xs]
+  (apply (partial merge-with +) (map (fn [x] {x 1}) xs)))
