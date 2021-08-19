@@ -31,5 +31,16 @@
     (is (= (set (problem-50 [1 :a 2 :b 3 :c])) #{[1 2 3] [:a :b :c]}))
     (is (= (set (problem-50 [:a "foo"  "bar" :b])) #{[:a :b] ["foo" "bar"]}))
     (is (= (set (problem-50 [[1 2] :a [3 4] 5 6 :b])) #{[[1 2] [3 4]] [:a :b] [5 6]})))
-)
+
+  '(testing "Problem 53" ; advanced problem
+    (is (= (problem-53 [1 0 1 2 3 0 4 5]) [0 1 2 3]))
+    (is (= (problem-53 [5 6 1 3 2 7]) [5 6]))
+    (is (= (problem-53 [2 3 3 4 5]) [3 4 5]))
+    (is (= (problem-53 [7 6 5 4]) [])))
+  
+  (testing "Problem 55"
+    (is (= (problem-55 3 (range 9)) '((0 1 2) (3 4 5) (6 7 8))))
+    (is (= (problem-55 2 (range 8)) '((0 1) (2 3) (4 5) (6 7))))
+    (is (= (problem-55 3 (range 8)) '((0 1 2) (3 4 5)))))
+  )
 

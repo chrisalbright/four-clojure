@@ -21,3 +21,11 @@
   (->> xs 
       (group-by type)
       (vals)))
+
+(defn problem-53 [xs] [])
+
+(defn problem-55 [x xs]
+  (loop [ys [] zs xs]
+    (if (< (count zs) x)
+      ys
+      (recur (conj ys (take x zs)) (drop x zs)))))
