@@ -17,10 +17,10 @@
 
 (defn problem-49 [n xs] [(take n xs) (drop n xs)])
 
-(defn problem-50 [xs] 
-  (->> xs 
-      (group-by type)
-      (vals)))
+(defn problem-50 [xs]
+  (->> xs
+       (group-by type)
+       (vals)))
 
 (defn problem-53 [xs] [])
 
