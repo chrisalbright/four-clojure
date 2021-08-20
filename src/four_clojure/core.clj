@@ -34,7 +34,9 @@
 (defn problem-56
   ([xs] (problem-56 xs [] #{}))
   ([[x & xs] ys seen]
-   (if-not (seq xs)
-     (if (seen x) ys (conj ys x))
-     (letfn [(merge-into [x xs seen] (if (seen x) xs (conj xs x)))]
-       (recur xs (merge-into x ys seen) (conj seen x))))))
+   (let [ys (if (seen x)
+              ys
+              (conj ys x))]
+     (if-not (seq xs)
+       ys
+       (recur xs ys (conj seen x))))))
