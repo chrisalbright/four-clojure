@@ -22,8 +22,6 @@
        (group-by type)
        (vals)))
 
-(defn problem-53 [xs] [])
-
 (defn problem-54 [x xs]
   (loop [ys [] zs xs]
     (if (< (count zs) x)
@@ -32,3 +30,11 @@
 
 (defn problem-55 [xs]
   (apply (partial merge-with +) (map (fn [x] {x 1}) xs)))
+
+(defn problem-56
+  ([xs] (problem-56 xs [] #{}))
+  ([[x & xs] ys seen]
+   (if-not (seq xs)
+     (if (seen x) ys (conj ys x))
+     (letfn [(merge-into [x xs seen] (if (seen x) xs (conj xs x)))]
+       (recur xs (merge-into x ys seen) (conj seen x))))))
